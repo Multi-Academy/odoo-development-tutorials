@@ -1,4 +1,9 @@
-# Welcome to MkDocs
+
+
+# Table of Contents
+
+* [`Install Odoo`](/install_odoo) - Install Odoo
+* [`Create Custom Module`](/create_custom_module) - Create Custom Module
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 

@@ -1,4 +1,4 @@
-site_name: Material For Mkdocs Tutorial
+site_name: Odoo Development Tutorials
 repo_url: https://github.com/Multi-Academy/odoo-development-tutorials.git
 repo_name: odoo-development-tutorials
 
@@ -28,8 +28,36 @@ theme:
         
   features:
     - navigation.footer
+    - navigation.instant
     - content.code.copy
     - content.code.select
+    - content.code.annotate 
+    - content.tabs.link
 
 plugins:
   - search
+  - git-committers:
+      repository: Multi-Academy/odoo-development-tutorials
+      branch: main
+  - git-authors
+
+markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+nav:
+    - index.md
+    - install_odoo.md
+    - create_custom_module.md
