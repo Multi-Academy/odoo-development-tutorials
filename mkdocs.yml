@@ -1,0 +1,35 @@
+site_name: Material For Mkdocs Tutorial
+repo_url: https://github.com/Multi-Academy/odoo-development-tutorials.git
+repo_name: odoo-development-tutorials
+
+theme:
+  name: material
+  font: 
+    text: Roboto
+  icon:
+    repo: fontawesome/brands/github
+  
+  palette:
+    
+    - scheme: slate
+      primary: purple
+      accent: purple
+      toggle:
+        icon: material/lightbulb-outline 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: default
+      primary: purple
+      accent: purples
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+        
+  features:
+    - navigation.footer
+    - content.code.copy
+    - content.code.select
+
+plugins:
+  - search
