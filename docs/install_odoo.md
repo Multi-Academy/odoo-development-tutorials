@@ -10,24 +10,21 @@
     A --> E[venv];
 
     B --> F[odoo16c.conf]
-    B --> G[odoo16e.conf]
 
     C --> J[odoo16c]
-    J --> K[addons]
-    C --> L[odoo16e]
-    L --> M[addons]
+    J --> K[odoo-bin]
+    K --> S
 
-    D --> N[odoo16c-custom-addons]
-    D --> O[odoo16e-custom-addons]
+    J --> L[addons]
+    L --> F
 
-    E --> P[activate]
+    D --> P[odoo16c-custom-addons]
+    P --> F
 
+    E --> R[activate]
+    R --> S
 
-
-    P --> R[Runner]
-    K --> R
-    N --> R
-    F --> R
+    F --> S[Runner]
     
     ```
 
@@ -40,24 +37,57 @@
     A --> D[local];
     A --> E[venv];
 
-    B --> F[odoo16c.conf]
-    B --> G[odoo16e.conf]
+    B --> F[odoo16e.conf]
 
-    C --> J[odoo16c]
-    J --> K[addons]
-    C --> L[odoo16e]
-    L --> M[addons]
+    C --> J[odoo16e]
+    J --> K[odoo-bin]
+    K --> S
 
-    D --> N[odoo16c-custom-addons]
-    D --> O[odoo16e-custom-addons]
+    J --> L[addons]
+    L --> F
 
-    E --> P[activate] 
+    D --> P[odoo16e-custom-addons]
+    P --> F
 
-    P --> R[Runner]
-    M --> R
-    O --> R
-    G --> R
+    E --> R[activate]
+    R --> S
+
+    F --> S[Runner]
+    
     ```
+=== "Both"
+
+    ``` mermaid
+    graph LR
+    A[odoo-dev] --> B[conf];
+    A --> C[src];
+    A --> D[local];
+    A --> E[venv];
+
+    B --> L[odoo16c.conf]
+    B --> M[odoo16e.conf]
+
+    C --> F[odoo16c]
+    F --> G[odoo-bin]
+    F --> H[addons]
+
+    C --> I[odoo16e]
+    I --> J[odoo-bin]
+    I --> K[addons]
+
+    D --> O[custom-addons]
+    E --> P[activate]
+
+    L --> Q[odoo-bin -c odoo16c.conf]
+    G --> Q
+    H --> L
+    O --> L
+
+    M --> R[odoo-bin -c odoo16e.conf]
+    J --> R
+    K --> M
+    ```
+
 ## create project directory
 
 === "Ubuntu"
